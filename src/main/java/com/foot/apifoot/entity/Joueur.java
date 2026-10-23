@@ -63,4 +63,15 @@ public class Joueur {
     public void setNom(String nom) {
         this.nom = nom;
     }
+
+    @Override
+    public String toString() {
+        return "Joueur{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", poste='" + poste + '\'' +
+                ", numeroMaillot=" + numeroMaillot +
+                '}';
+    }
 }
