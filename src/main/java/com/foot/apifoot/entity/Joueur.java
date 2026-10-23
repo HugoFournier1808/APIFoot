@@ -24,7 +24,43 @@ public class Joueur {
         this.numeroMaillot = numeroMaillot;
     }
 
-    // Pense à générer les Getters et Setters pour toutes les variables ci-dessus !
-    // Dans IntelliJ : Alt + Inser (ou clic droit -> Generate) -> Getters and Setters
+    public String getNom() {
+        return nom;
+    }
 
+    public Long getId() {
+        return id;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public String getPoste() {
+        return poste;
+    }
+
+    public int getNumeroMaillot() {
+        return numeroMaillot;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setNumeroMaillot(int numeroMaillot) {
+        this.numeroMaillot = numeroMaillot;
+    }
+
+    public void setPoste(String poste) {
+        this.poste = poste;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
 }
