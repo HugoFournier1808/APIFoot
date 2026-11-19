@@ -2,11 +2,11 @@ package com.foot.apifoot.service;
 
 import com.foot.apifoot.dto.JoueurDto;
 import com.foot.apifoot.entity.Joueur;
-import com.foot.apifoot.repository.EquipeRepository;
 import com.foot.apifoot.repository.JoueurRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import com.foot.apifoot.repository.EquipeRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -31,22 +31,22 @@ public class JoueurServiceImpl implements JoueurService {
 
     @Override
     public Joueur save(JoueurDto joueurDto) {
-        Joueur joueur = new Joueur();
-        return mapperEtSauvegarder(joueur, joueurDto);
+        return mapperEtSauvegarder(new Joueur(), joueurDto);
     }
 
     @Override
-    public Joueur update(Long id, JoueurDto joueurDto) {
-        Optional<Joueur> joueurExistant = joueurRepository.findById(id);
-        if (joueurExistant.isPresent()) {
-            return mapperEtSauvegarder(joueurExistant.get(), joueurDto);
+    public Optional<Joueur> update(Long id, JoueurDto joueurDto) {
+        return joueurRepository.findById(id)
+                .map(joueur -> mapperEtSauvegarder(joueur, joueurDto));
+    }
+
+    @Override
+    public boolean delete(Long id) {
+        if (!joueurRepository.existsById(id)) {
+            return false;
         }
-        return null;
-    }
-
-    @Override
-    public void delete(Long id) {
         joueurRepository.deleteById(id);
+        return true;
     }
 
     private Joueur mapperEtSauvegarder(Joueur joueur, JoueurDto dto) {

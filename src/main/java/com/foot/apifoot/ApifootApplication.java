@@ -9,5 +9,4 @@ public class ApifootApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ApifootApplication.class, args);
 	}
-
 }
