@@ -22,3 +22,12 @@ Le projet suit un découpage en couches strict :
 ## Endpoints principaux (`http://localhost:8085`)
 * **Équipes :** `GET /api/equipes`, `GET /api/equipes/{id}`, `POST /api/equipes`, `PUT /api/equipes/{id}`, `DELETE /api/equipes/{id}`
 * **Joueurs :** `GET /api/joueurs`, `GET /api/joueurs/{id}`, `POST /api/joueurs`, `PUT /api/joueurs/{id}`, `DELETE /api/joueurs/{id}`
+
+## Sécurité (Authentification Bearer JWT)
+Toutes les routes `/api/equipes/**` et `/api/joueurs/**` sont protégées par Spring Security.
+1. Créer un compte via `POST /api/auth/register` ou se connecter via `POST /api/auth/login` (corps JSON : `{"username": "...", "password": "..."}`).
+2. Copier le `token` retourné et l'ajouter en **Bearer Token** (`Authorization: Bearer <token>`) sur les requêtes suivantes.
+
+## Lancement avec Docker
+`./mvnw clean package -DskipTests && docker compose up -d --build`
+L'API est ensuite accessible sur `http://localhost:8085`.

@@ -15,7 +15,9 @@ http:
         "poste": "Ailier Gauche",
         "numeroMaillot": 10
       }
-  auth: inherit
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJodWdvIiwiaWF0IjoxNzk1MDk5NzA5LCJleHAiOjE3OTUxODYxMDl9.gSeaY_Txt1VdaQvMBKtPJnXIYjofc57KTCallWaE8DqWy-ry527sqVaQisPRa317
 
 settings:
   encodeUrl: true
