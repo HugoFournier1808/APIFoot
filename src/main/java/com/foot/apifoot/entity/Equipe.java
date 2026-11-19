@@ -1,14 +1,20 @@
 package com.foot.apifoot.entity;
 
-import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Equipe {
 
     @Id
@@ -16,9 +22,10 @@ public class Equipe {
     private Long id;
 
     private String nom;
+
     private String ville;
 
     @OneToMany(mappedBy = "equipe", cascade = CascadeType.ALL)
     @JsonIgnore
-    private List<Joueur> joueurs;
+    private List<Joueur> joueurs = new ArrayList<>();
 }
