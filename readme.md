@@ -2,7 +2,7 @@
 
 ## Membres du groupe
 * Hugo Fournier
-* [Prénom Nom de ton/tes binôme(s)]
+* Golliot Bastian
 
 ## Présentation du projet
 APIFoot est une API REST en Java / Spring Boot permettant de gérer des équipes de football et leurs joueurs via des opérations CRUD complètes.
@@ -19,6 +19,6 @@ Le projet suit un découpage en couches strict :
 * Base de données H2 / PostgreSQL
 * Collection **Bruno** incluse à la racine pour tester les routes CRUD
 
-## Endpoints principaux (`http://localhost:8084`)
+## Endpoints principaux (`http://localhost:8085`)
 * **Équipes :** `GET /api/equipes`, `GET /api/equipes/{id}`, `POST /api/equipes`, `PUT /api/equipes/{id}`, `DELETE /api/equipes/{id}`
 * **Joueurs :** `GET /api/joueurs`, `GET /api/joueurs/{id}`, `POST /api/joueurs`, `PUT /api/joueurs/{id}`, `DELETE /api/joueurs/{id}`
