@@ -1,29 +1,24 @@
-# APIFoot - Projet Spring Boot (Sprint 1)
+# APIFoot — API REST Spring Boot
 
-**Équipe de développement :**
+## Membres du groupe
 * Hugo Fournier
-* Golliot Bastian
+* [Prénom Nom de ton/tes binôme(s)]
 
-##  Présentation du projet
-Ce projet est une API REST CRUD développée avec Spring Boot sur le thème du football.
-Elle permet de gérer des équipes et des joueurs avec une relation de base de données (One-to-Many / Many-to-One).
+## Présentation du projet
+APIFoot est une API REST en Java / Spring Boot permettant de gérer des équipes de football et leurs joueurs via des opérations CRUD complètes.
+Le modèle repose sur une relation **One-to-Many / Many-to-One** : une équipe regroupe plusieurs joueurs et chaque joueur est rattaché à une équipe.
 
-##  Technologies utilisées
+## Architecture
+Le projet suit un découpage en couches strict :
+`Controller (DTO)` -> `Service (Interface / Implémentation)` -> `Repository (Entity)`
+
+## Technologies utilisées
 * Java 21
 * Spring Boot 3.3.4 (Web, Data JPA, Validation)
-* Base de données H2 (en mémoire)
-* Lombok
+* Lombok (constructeurs, getters et setters générés par annotations)
+* Base de données H2 / PostgreSQL
+* Collection **Bruno** incluse à la racine pour tester les routes CRUD
 
-##  Endpoints de l'API
-L'API tourne par défaut sur `http://localhost:8085`.
-
-### Équipes
-* `GET /api/equipes` : Récupérer toutes les équipes
-* `POST /api/equipes` : Créer une équipe
-
-### Joueurs
-* `GET /api/joueurs` : Récupérer tous les joueurs
-* `GET /api/joueurs/{id}` : Récupérer un joueur spécifique
-* `POST /api/joueurs` : Créer un joueur (nécessite un `equipeId`)
-* `PUT /api/joueurs/{id}` : Modifier un joueur
-* `DELETE /api/joueurs/{id}` : Supprimer un joueur
+## Endpoints principaux (`http://localhost:8084`)
+* **Équipes :** `GET /api/equipes`, `GET /api/equipes/{id}`, `POST /api/equipes`, `PUT /api/equipes/{id}`, `DELETE /api/equipes/{id}`
+* **Joueurs :** `GET /api/joueurs`, `GET /api/joueurs/{id}`, `POST /api/joueurs`, `PUT /api/joueurs/{id}`, `DELETE /api/joueurs/{id}`
